@@ -1,0 +1,26 @@
+:root {
+  --red: #FC5C65;
+  --orange: #FD9644;
+  --yellow: #FED330;
+  --green-1: #20BF6B;
+  --green-2: #26DE81;
+  --green-3: #35FA96;
+  --blue-1: #4B7BEC;
+  --blue-2: #30B0FF;
+  --blue-3: #7AC8FF;
+  --purple: #8C3AD9;
+  --horizon: #4B6584;
+  --gray-100: #333333;
+  --gray-200: #4F4F4F;
+  --gray-300: #828282;
+  --gray-400: #BDBDBD;
+  --gray-500: #E0E0E0;
+  --gray-600: #F2F2F2;
+  --gray-700: #FBFBFB;
+}
+
+@import "normalize";
+
+body {
+  font-family: 'Spoqa Han Sans', sans-serif;
+}
