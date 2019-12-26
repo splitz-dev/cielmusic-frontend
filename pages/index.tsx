@@ -3,9 +3,7 @@ import Head from 'next/head'
 
 import styled from '@emotion/styled'
 
-const Container = styled.div`
-  font-size: 14px;
-`
+import Sidebar from '../components/Sidebar'
 
 const Home = () => (
   <>
@@ -13,9 +11,12 @@ const Home = () => (
       <title>Home</title>
       <link rel="icon" href="/favicon.ico" />
     </Head>
-    <Container>
-      <p>테스트</p>
-    </Container>
+    <>
+      <Sidebar />
+      <main>
+        <p>Content</p>
+      </main>
+    </>
   </>
 )
 
