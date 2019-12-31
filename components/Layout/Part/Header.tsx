@@ -7,7 +7,7 @@ const SearchForm = dynamic(() => import('./Search'))
 
 const HeaderElement = styled.header`
   height: 55px;
-  padding: 0 10px;
+  padding: 8px 30px;
 `
 
 const SearchFormAtHeader = styled(SearchForm)`
