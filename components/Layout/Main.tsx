@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 
-import Sidebar from '../Sidebar'
+import Sidebar from './Part/Sidebar'
 
 const MainController = styled.main`
   margin-left: 210px;
