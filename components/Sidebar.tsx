@@ -19,9 +19,6 @@ const SidebarElement = styled.aside`
         width: 30px;
         margin-right: 12px;
       }
-      span {
-        margin-bottom: -4px;
-      }
     }
   }
 `
