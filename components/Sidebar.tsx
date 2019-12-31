@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import styled from '@emotion/styled'
 
 const SidebarElement = styled.aside`
@@ -7,17 +8,22 @@ const SidebarElement = styled.aside`
   background: var(--gray-600);
   width: 210px;
   height: 100vh;
-  padding: 15px 10px;
   .section- {
     &Logo {
+      height: 55px;
       display: flex;
       justify-content: center;
       align-items: center;
       font-weight: 700;
       font-size: 18px;
+      text-decoration: none;
+      color: #000;
       .svgElement {
-        width: 30px;
-        margin-right: 12px;
+        width: 25px;
+        margin-right: 8px;
+      }
+      span {
+        margin-top: -1px;
       }
     }
   }
@@ -26,10 +32,12 @@ const SidebarElement = styled.aside`
 const Sidebar: React.FC = () => {
   return (
     <SidebarElement>
-      <div className="section-Logo">
-        <img src="/assets/logo.svg" alt="Logo" className="svgElement" />
-        <span>Ciel Music</span>
-      </div>
+      <Link href="/">
+        <a className="section-Logo">
+          <img src="/assets/logo.svg" alt="Logo" className="svgElement" />
+          <span>Ciel Music</span>
+        </a>
+      </Link>
       <div className=""></div>
     </SidebarElement>
   )
