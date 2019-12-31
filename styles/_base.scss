@@ -1,4 +1,10 @@
-@import "normalize";
+@import 'normalize';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 p {
   margin: 0;

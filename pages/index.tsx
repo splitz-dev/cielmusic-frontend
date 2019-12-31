@@ -2,21 +2,17 @@ import React from 'react'
 import Head from 'next/head'
 
 import styled from '@emotion/styled'
+import MainLayout from '../components/Layout/Main'
 
-import Sidebar from '../components/Sidebar'
-
-const Home = () => (
+const Home: React.FC = () => (
   <>
     <Head>
       <title>Home</title>
       <link rel="icon" href="/favicon.ico" />
     </Head>
-    <>
-      <Sidebar />
-      <main>
-        <p>Content</p>
-      </main>
-    </>
+    <MainLayout>
+      <p>섹스</p>
+    </MainLayout>
   </>
 )
 

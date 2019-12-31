@@ -1,26 +1,27 @@
 :root {
-  --red: #FC5C65;
-  --orange: #FD9644;
-  --yellow: #FED330;
-  --green-1: #20BF6B;
-  --green-2: #26DE81;
-  --green-3: #35FA96;
-  --blue-1: #4B7BEC;
-  --blue-2: #30B0FF;
-  --blue-3: #7AC8FF;
-  --purple: #8C3AD9;
-  --horizon: #4B6584;
+  --red: #fc5c65;
+  --orange: #fd9644;
+  --yellow: #fed330;
+  --green-1: #20bf6b;
+  --green-2: #26de81;
+  --green-3: #35fa96;
+  --blue-1: #4b7bec;
+  --blue-2: #30b0ff;
+  --blue-3: #7ac8ff;
+  --purple: #8c3ad9;
+  --horizon: #4b6584;
   --gray-100: #333333;
-  --gray-200: #4F4F4F;
+  --gray-200: #4f4f4f;
   --gray-300: #828282;
-  --gray-400: #BDBDBD;
-  --gray-500: #E0E0E0;
-  --gray-600: #F2F2F2;
-  --gray-700: #FBFBFB;
+  --gray-400: #bdbdbd;
+  --gray-500: #e0e0e0;
+  --gray-600: #f2f2f2;
+  --gray-700: #fbfbfb;
 }
 
-@import "base";
+@import 'base';
 
 body {
   font-family: 'Spoqa Han Sans', sans-serif;
+  background: #fff;
 }
