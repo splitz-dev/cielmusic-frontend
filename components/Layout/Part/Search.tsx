@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from '@emotion/styled'
-
 const SearchFormStyle = styled.form`
   border-radius: 100px;
   width: 400px;
