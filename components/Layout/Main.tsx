@@ -1,8 +1,9 @@
 import React from 'react'
 import styled from '@emotion/styled'
+import dynamic from 'next/dynamic'
 
-import Sidebar from './Part/Sidebar'
-import Header from './Part/Header'
+const Sidebar = dynamic(() => import('./Part/Sidebar'))
+const Header = dynamic(() => import('./Part/Header'))
 
 const MainController = styled.main`
   margin-left: 210px;
