@@ -11,7 +11,7 @@ const Home: React.FC = () => (
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <MainLayout>
-      <p>섹스</p>
+      <p>배그 꿀잼~</p>
     </MainLayout>
   </>
 )
