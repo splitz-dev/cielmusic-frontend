@@ -39,7 +39,7 @@ const SearchForm: React.FC = () => {
       <button type="submit">
         <img src="/assets/search.svg" alt="Ciel Music 검색하기" />
       </button>
-      <input placeholder="검색하십시오" />
+      <input placeholder="제목, 아티스트, 앨범 등을 검색해보세요!" />
     </SearchFormStyle>
   )
 }

@@ -6,7 +6,7 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <meta name="viewport" content="width=770px, initial-scale=1.0" />
           <link
             href="https://cdn.jsdelivr.net/npm/spoqa-han-sans@2/css/SpoqaHanSans-kr.min.css"
             rel="stylesheet"
