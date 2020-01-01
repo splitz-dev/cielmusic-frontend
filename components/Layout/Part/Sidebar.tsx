@@ -30,13 +30,13 @@ const SidebarElement = styled.aside`
   .Menu {
     padding: 10px 0;
     a {
-      height: 30px;
+      height: 33px;
       display: flex;
       align-items: center;
       text-decoration: none;
       color: #000;
       font-size: 0.88rem;
-      padding: 20px 24px;
+      padding: 0 24px;
       margin: 5px 0;
       svg {
         color: #333;
