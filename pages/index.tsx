@@ -7,7 +7,7 @@ import Container from '../components/Container'
 const Home: React.FC = () => (
   <>
     <Head>
-      <title>홈 - 시엘 뮤직</title>
+      <title>홈 • Ciel Music</title>
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <MainLayout>
