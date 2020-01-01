@@ -19,7 +19,17 @@ const SearchFormAtHeader = styled(SearchForm)`
 `
 
 const ButtonAtHeader = styled(Button)`
-  height: 100%;
+  padding: 0.5rem 3rem;
+  box-shadow: 0 0 6px 0 rgba(157, 96, 212, 0.5);
+  border: solid 2px transparent;
+  background-image: linear-gradient(#f95d68, #fa964d), linear-gradient(101deg, #f95d68, #fa964d);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  box-shadow: 2px 1000px 1px #fff inset;
+  &:hover {
+    box-shadow: none;
+    color: white;
+  }
 `
 
 const Header: React.FC = () => {
