@@ -3,15 +3,18 @@ import Head from 'next/head'
 
 import styled from '@emotion/styled'
 import MainLayout from '../components/Layout/Main'
+import Container from '../components/Container'
 
 const Home: React.FC = () => (
   <>
     <Head>
-      <title>Home</title>
+      <title>홈 - 시엘 뮤직</title>
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <MainLayout>
-      <p>배그 꿀잼~</p>
+      <p>
+        <Container></Container>
+      </p>
     </MainLayout>
   </>
 )
