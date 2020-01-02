@@ -19,6 +19,8 @@ const SearchFormAtHeader = styled(SearchForm)`
 `
 
 const ButtonAtHeader = styled(Button)`
+  height: 100%;
+  font-weight: 700;
   padding: 0.5rem 3rem;
   box-shadow: 0 0 6px 0 rgba(157, 96, 212, 0.5);
   border: solid 2px transparent;

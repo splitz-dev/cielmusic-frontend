@@ -6,7 +6,7 @@ const JumbStyle = styled.section`
   width: 100%;
   border-radius: 22px;
   &.main {
-    background: linear-gradient(10deg, var(--red) 0%, var(--yellow) 100%);
+    background: linear-gradient(25deg, var(--red) 0%, var(--yellow) 100%);
     color: #fff;
   }
   &.gray {
