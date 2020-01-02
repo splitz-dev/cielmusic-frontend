@@ -5,20 +5,25 @@ const JumbStyle = styled.section`
   padding: 20px 35px;
   width: 100%;
   border-radius: 22px;
-  &.color-main {
+  &.main {
     background: linear-gradient(10deg, var(--red) 0%, var(--yellow) 100%);
     color: #fff;
   }
-  &.color-gray {
+  &.gray {
     background: var(--gray-500);
     color: #4c4c4c;
   }
 `
 
-const Jumbotron: React.FC = props => {
+interface JumbotronI {
+  type: string
+  children: React.ReactNode
+}
+
+const Jumbotron: React.FC<JumbotronI> = props => {
   return (
     <>
-      <JumbStyle className="color-gray">{props.children}</JumbStyle>
+      <JumbStyle className={props.type}>{props.children}</JumbStyle>
     </>
   )
 }

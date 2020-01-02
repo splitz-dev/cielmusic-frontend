@@ -3,7 +3,7 @@ import Head from 'next/head'
 
 import MainLayout from '../components/Layout/Main'
 import Container from '../components/Container'
-import Jumbotron from '../components/Jumbotron'
+import MainRanking from '../components/Ranking/Main'
 
 const Home: React.FC = () => (
   <>
@@ -13,13 +13,7 @@ const Home: React.FC = () => (
     </Head>
     <MainLayout>
       <Container>
-        <Jumbotron>
-          <h1>
-            시엘 뮤직
-            <br />
-            인기 차트
-          </h1>
-        </Jumbotron>
+        <MainRanking />
       </Container>
     </MainLayout>
   </>
