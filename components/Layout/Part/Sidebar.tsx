@@ -62,7 +62,7 @@ const SidebarElement = styled.aside`
 `
 
 interface SMenuItem {
-  path?: string
+  path: string
 }
 
 const MenuItem: React.FC<SMenuItem> = props => {
