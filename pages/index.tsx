@@ -14,7 +14,11 @@ const Home: React.FC = () => (
     <MainLayout>
       <Container>
         <Jumbotron>
-          <h1>환영합니다</h1>
+          <h1>
+            시엘 뮤직
+            <br />
+            인기 차트
+          </h1>
         </Jumbotron>
       </Container>
     </MainLayout>
