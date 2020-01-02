@@ -7,7 +7,7 @@ const RankingStyle = styled.div`
   line-height: 1.5;
 `
 
-const MainRanking = () => {
+const MainRanking: React.FC = () => {
   return (
     <>
       <Jumbotron type="main">
