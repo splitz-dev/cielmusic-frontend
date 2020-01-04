@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import dynamic from 'next/dynamic'
+import Link from 'next/link'
 
 import Button from '../../Button'
 
@@ -38,9 +39,9 @@ const Header: React.FC = () => {
   return (
     <HeaderElement>
       <SearchFormAtHeader />
-      <div>
+      <Link href="/auth/login">
         <ButtonAtHeader>로그인</ButtonAtHeader>
-      </div>
+      </Link>
     </HeaderElement>
   )
 }
