@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic'
 
 const MainLayout = dynamic(() => import('../components/Layout/Main'))
 const Container = dynamic(() => import('../components/Container'))
+const RankingTable = dynamic(() => import('../components/PageComponent/Ranking/RankingTable'))
 
 const Home: React.FC = () => (
   <>
@@ -12,7 +13,9 @@ const Home: React.FC = () => (
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <MainLayout>
-      <Container></Container>
+      <Container>
+        <RankingTable />
+      </Container>
     </MainLayout>
   </>
 )

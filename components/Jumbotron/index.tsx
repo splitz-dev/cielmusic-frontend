@@ -21,11 +21,7 @@ interface JumbotronI {
 }
 
 const Jumbotron: React.FC<JumbotronI> = props => {
-  return (
-    <>
-      <JumbStyle className={props.type}>{props.children}</JumbStyle>
-    </>
-  )
+  return <JumbStyle className={props.type}>{props.children}</JumbStyle>
 }
 
 export default Jumbotron
