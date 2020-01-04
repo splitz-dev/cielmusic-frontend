@@ -1,9 +1,10 @@
 import React from 'react'
 import Head from 'next/head'
+import dynamic from 'next/dynamic'
 
-import MainLayout from '../components/Layout/Main'
-import Container from '../components/Container'
-import MainRanking from '../components/Ranking/Main'
+const MainLayout = dynamic(() => import('../components/Layout/Main'))
+const Container = dynamic(() => import('../components/Container'))
+const RankingJumbotron = dynamic(() => import('../components/PageComponent/RankingJumbotron'))
 
 const Home: React.FC = () => (
   <>
@@ -13,7 +14,7 @@ const Home: React.FC = () => (
     </Head>
     <MainLayout>
       <Container>
-        <MainRanking />
+        <RankingJumbotron />
       </Container>
     </MainLayout>
   </>
