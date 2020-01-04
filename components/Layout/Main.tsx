@@ -6,6 +6,7 @@ const Sidebar = dynamic(() => import('./Part/Sidebar'))
 const Header = dynamic(() => import('./Part/Header'))
 
 const MainController = styled.main`
+  min-width: 770px;
   margin-left: 210px;
 `
 

@@ -8,7 +8,7 @@ interface Props {
 
 const ErrorPage = ({ errorCode }: Props) => {
   if (errorCode === 404) {
-    return <meta http-equiv="refresh" content="0; url=/" />
+    return <meta httpEquiv="refresh" content="0; url=/" />
   }
   return <Error statusCode={errorCode} />
 }

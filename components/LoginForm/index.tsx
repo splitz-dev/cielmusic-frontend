@@ -4,18 +4,32 @@ import Button from '../Button'
 import Link from 'next/link'
 
 const FormWrapper = styled.div`
-  display: block;
-  margin: auto;
-  width: 50%;
+  display: inline-block;
+  width: 40%;
   text-align: center;
+
+  @media (max-width: 1025px) {
+    width: 50%;
+  }
+  @media (max-width: 769px) {
+    width: 70%;
+  }
+  @media (max-width: 600px) {
+    width: 80%;
+  }
+
+  @media (max-width: 426px) {
+    width: 95%;
+  }
 `
 
 const StyledForm = styled.form`
-  margin-top: 100px;
+  margin-top: 80px;
   margin-bottom: 50px;
   padding: 0.5rem 3rem;
   background-color: white;
   border-radius: 30px;
+  padding-top: 20px;
 `
 const StyledInput = styled.input`
   margin-top: 30px;
@@ -39,6 +53,9 @@ const StyledButton = styled(Button)`
   &:hover {
     box-shadow: none;
     color: white;
+  }
+  @media (max-width: 1000px) {
+    padding: 0.6rem 1.2rem;
   }
 `
 const ButtonWrapper = styled.div`
