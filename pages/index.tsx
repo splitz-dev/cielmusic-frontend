@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic'
 
 const MainLayout = dynamic(() => import('../components/Layout/Main'))
 const Container = dynamic(() => import('../components/Container'))
-const RankingJumbotron = dynamic(() => import('../components/PageComponent/RankingJumbotron'))
+const RankingJumbotron = dynamic(() => import('../components/PageComponent/Index/RankingJumbotron'))
 
 const Home: React.FC = () => (
   <>

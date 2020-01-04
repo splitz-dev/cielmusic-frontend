@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 
-import Jumbotron from '../Jumbotron'
+import Jumbotron from '../../Jumbotron'
 
 const RankingStyle = styled.div`
   line-height: 1.4;
