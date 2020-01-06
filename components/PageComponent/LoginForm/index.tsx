@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 const FormWrapper = styled.div`
   display: block;
-  width: 50%;
+  width: 500px;
   margin: 0 auto;
 `
 
@@ -20,33 +20,26 @@ const StyledForm = styled.form`
 `
 
 const StyledButton = styled(Button)`
-  flex: 1;
+  font-size: 18px;
   font-weight: 700;
-  padding: 0.5rem 3rem;
-  box-shadow: 0 0 6px 0 rgba(157, 96, 212, 0.5);
+  box-shadow: 0 2px 4px 0 rgba(157, 96, 212, 0.5);
   background-image: linear-gradient(101deg, #f95d68, #fa964d);
-  background-origin: border-box;
-  background-clip: border-box;
-  box-shadow: 2px 1000px 1px #fff inset;
-  &:hover {
-    box-shadow: none;
-    color: white;
-  }
+  color: #fff;
   @media (max-width: 1000px) {
     padding: 0.6rem 1.2rem;
   }
 `
 const ButtonWrapper = styled.div`
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin-top: 30px;
   margin-bottom: 10px;
-`
-
-const LoginButton = styled(StyledButton)`
-  margin-right: 5px;
-`
-const RegisterButton = styled(StyledButton)`
-  margin-left: 5px;
+  .register-link {
+    font-size: 15px;
+    color: var(--gray-300);
+    text-decoration: none;
+  }
 `
 
 const PasswordFindLink = styled.a`
@@ -110,9 +103,9 @@ const LoginForm: React.FC = props => {
           label="비밀번호"
         />
         <ButtonWrapper>
-          <LoginButton type="submit">로그인</LoginButton>
-          <Link href="/auth/register">
-            <RegisterButton>회원가입</RegisterButton>
+          <StyledButton type="submit">로그인</StyledButton>
+          <Link href="/auth/register" passHref>
+            <a className="register-link">회원가입</a>
           </Link>
         </ButtonWrapper>
       </StyledForm>
