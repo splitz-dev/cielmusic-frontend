@@ -18,6 +18,6 @@ app.prepare().then(() => {
 
   server.listen(port, err => {
     if (err) throw err
-    console.log(`> Ciel Music ready on http://localhost:${port}`)
+    console.log(`> Ciel Music ready on port ${port}`)
   })
 })
