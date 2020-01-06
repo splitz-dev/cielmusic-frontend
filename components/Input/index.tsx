@@ -27,6 +27,9 @@ interface InputInterface {
   label?: string | undefined
   placeholder?: string | undefined
   value?: string | undefined
+  type?: string | undefined
+  name?: string | undefined
+  onChange?: ((event: React.ChangeEvent<HTMLInputElement>) => void) | undefined
 }
 
 const Input: React.FC<InputInterface> = props => {
@@ -41,6 +44,7 @@ const Input: React.FC<InputInterface> = props => {
         <input
           placeholder={props.hasOwnProperty('placeholder') ? props.placeholder : undefined}
           value={props.hasOwnProperty('value') ? props.value : undefined}
+          onChange={props.hasOwnProperty('onChange') ? props.onChange : undefined}
         />
       </InputContainer>
     </>
