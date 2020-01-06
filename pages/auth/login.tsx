@@ -1,8 +1,11 @@
 import React from 'react'
 import Head from 'next/head'
+import dynamic from 'next/dynamic'
 
-import LoginLayout from '../../components/PageComponent/Login'
+import MainLayout from '../../components/Layout/Main'
 import Container from '../../components/Container'
+
+const LoginForm = dynamic(() => import('../../components/PageComponent/LoginForm'))
 
 const Login: React.FC = () => (
   <>
@@ -10,11 +13,11 @@ const Login: React.FC = () => (
       <title>로그인 • Ciel Music</title>
       <link rel="icon" href="/favicon.ico" />
     </Head>
-    <LoginLayout>
+    <MainLayout>
       <Container>
-        <Login />
+        <LoginForm />
       </Container>
-    </LoginLayout>
+    </MainLayout>
   </>
 )
 

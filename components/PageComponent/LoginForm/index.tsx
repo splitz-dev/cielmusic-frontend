@@ -1,13 +1,12 @@
 import React, { useState, useRef } from 'react'
+import dynamic from 'next/dynamic'
 import styled from '@emotion/styled'
-import Button from '../Button'
+import Button from '../../Button'
 import Link from 'next/link'
 
 const FormWrapper = styled.div`
-  display: inline-block;
-  width: 40%;
-  text-align: center;
-
+  display: block;
+  width: 100%;
   @media (max-width: 1025px) {
     width: 50%;
   }
@@ -31,16 +30,7 @@ const StyledForm = styled.form`
   border-radius: 30px;
   padding-top: 20px;
 `
-const StyledInput = styled.input`
-  margin-top: 30px;
-  display: block;
-  height: 48px;
-  width: 100%;
-  border: 0;
-  &:focus {
-    outline: 0;
-  }
-`
+
 const StyledButton = styled(Button)`
   flex: 1;
   font-weight: 700;
@@ -76,6 +66,8 @@ const PasswordFindLink = styled.a`
   cursor: pointer;
   color: white;
 `
+
+const Input = dynamic(() => import('../../Input'))
 
 const LoginForm: React.FC = props => {
   const inputRef = useRef<HTMLInputElement>(null)
@@ -114,20 +106,20 @@ const LoginForm: React.FC = props => {
   return (
     <FormWrapper>
       <StyledForm onSubmit={handleSubmit}>
-        <StyledInput
+        <Input
           type="email"
           name="email"
           value={email}
           onChange={onChange}
           ref={inputRef}
-          placeholder="이메일"
+          label="이메일"
         />
-        <StyledInput
+        <Input
           type="password"
           name="password"
           value={password}
           onChange={onChange}
-          placeholder="비밀번호"
+          label="비밀번호"
         />
         <ButtonWrapper>
           <LoginButton type="submit">로그인</LoginButton>

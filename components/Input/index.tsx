@@ -4,18 +4,21 @@ import styled from '@emotion/styled'
 const InputContainer = styled.div`
   display: inline-block;
   padding: 10px 20px;
+  width: 100%;
   background: var(--gray-600);
   border-radius: 24px;
   outline: none;
-  &:focus,
-  &:active {
+  line-height: 1.5;
+  &:focus {
     outline: none;
   }
   input {
+    width: 100%;
     border: 0;
     background: transparent;
     -webkit-appearance: none;
-    font-size: 1.1rem;
+    font-size: 1rem;
+    outline: none;
   }
   .label {
     display: block;
@@ -24,6 +27,7 @@ const InputContainer = styled.div`
 `
 
 interface InputInterface {
+  ref?: any
   label?: string | undefined
   placeholder?: string | undefined
   value?: string | undefined
@@ -44,7 +48,10 @@ const Input: React.FC<InputInterface> = props => {
         <input
           placeholder={props.hasOwnProperty('placeholder') ? props.placeholder : undefined}
           value={props.hasOwnProperty('value') ? props.value : undefined}
+          name={props.hasOwnProperty('name') ? props.name : undefined}
+          type={props.hasOwnProperty('type') ? props.type : undefined}
           onChange={props.hasOwnProperty('onChange') ? props.onChange : undefined}
+          {...props}
         />
       </InputContainer>
     </>

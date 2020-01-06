@@ -1,5 +1,4 @@
 import React from 'react'
-import { storiesOf } from '@storybook/react'
 import { withKnobs, text, boolean, select } from '@storybook/addon-knobs'
 
 import Input from '../components/Input'
@@ -11,19 +10,21 @@ export default {
 }
 
 export const Default = () => {
+  const Type = select('Input Type', ['text', 'email', 'password', 'phone'], 'text')
   const Placeholder = text('Input Placeholder', 'This is Placeholder')
   const Value = text('Input Value', '')
-  return <Input placeholder={Placeholder} value={Value} />
+  return <Input type={Type} placeholder={Placeholder} value={Value} />
 }
 Default.story = {
   name: 'Default state',
 }
 
 export const withLabel = () => {
+  const Type = select('Input Type', ['text', 'email', 'password', 'phone'], 'text')
   const Placeholder = text('Input Placeholder', 'This is Placeholder')
   const Value = text('Input Value', '')
   const Label = text('Form Label', 'Hello everyone 😄')
-  return <Input placeholder={Placeholder} value={Value} label={Label} />
+  return <Input placeholder={Placeholder} value={Value} label={Label} type={Type} />
 }
 withLabel.story = {
   name: 'with Label',
