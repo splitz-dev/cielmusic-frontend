@@ -5,7 +5,7 @@ const InputContainer = styled.div`
   display: inline-block;
   padding: 10px 30px;
   width: 100%;
-  border: 1px solid transparent;
+  border: 1.5px solid transparent;
   background: var(--gray-600);
   border-radius: 32px;
   outline: none;
@@ -14,7 +14,7 @@ const InputContainer = styled.div`
   transition: all 0.5s ease;
   &:focus,
   &:hover {
-    border: 1px solid var(--blue-2);
+    border: 1.5px solid var(--red);
   }
   input {
     width: 100%;
@@ -28,6 +28,7 @@ const InputContainer = styled.div`
   .label {
     display: block;
     font-size: 0.85rem;
+    color: var(--gray-300);
   }
 `
 
