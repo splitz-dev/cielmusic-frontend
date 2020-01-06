@@ -30,6 +30,7 @@ const StyledRankingTable = styled.table`
         width: 80px;
         img {
           height: 60px;
+          border-radius: 16px;
         }
       }
       .song {
