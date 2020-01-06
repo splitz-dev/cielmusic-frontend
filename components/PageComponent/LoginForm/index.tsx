@@ -6,20 +6,8 @@ import Link from 'next/link'
 
 const FormWrapper = styled.div`
   display: block;
-  width: 100%;
-  @media (max-width: 1025px) {
-    width: 50%;
-  }
-  @media (max-width: 769px) {
-    width: 70%;
-  }
-  @media (max-width: 600px) {
-    width: 80%;
-  }
-
-  @media (max-width: 426px) {
-    width: 95%;
-  }
+  width: 50%;
+  margin: 0 auto;
 `
 
 const StyledForm = styled.form`
