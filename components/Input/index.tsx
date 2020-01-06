@@ -3,13 +3,13 @@ import styled from '@emotion/styled'
 
 const InputContainer = styled.div`
   display: inline-block;
-  padding: 10px 30px;
+  padding: 6px 28px;
   width: 100%;
   border: 1.5px solid transparent;
   background: var(--gray-600);
   border-radius: 50px;
   outline: none;
-  line-height: 1.6;
+  line-height: 1.4;
   margin-bottom: 12px;
   transition: all 0.5s ease;
   &:active,
@@ -22,9 +22,9 @@ const InputContainer = styled.div`
     border: 0;
     background: transparent;
     -webkit-appearance: none;
-    font-size: 1rem;
+    font-size: 0.95rem;
     outline: none;
-    padding: 5px 0;
+    padding: 4px 0;
   }
   .label {
     display: block;

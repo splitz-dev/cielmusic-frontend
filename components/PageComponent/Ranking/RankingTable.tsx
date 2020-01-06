@@ -10,6 +10,7 @@ const StyledRankingTable = styled.table`
   thead {
     th {
       font-weight: 400;
+      font-size: 0.8rem;
       padding: 10px 0.7rem;
       &.song,
       &.artist {
@@ -73,7 +74,22 @@ const RankingTable: React.FC = () => {
         </thead>
         <tbody>
           <tr>
-            <td className="rankNum">1</td>
+            <td className="rankNum">99</td>
+            <td className="thumb">
+              <img
+                src="https://cdn.music-flo.com/image/album/026/281/04/04/404281026_5de0be5f.jpg?1575009888883/dims/resize/140x140/quality/90"
+                alt="METEOR - 창모"
+              />
+            </td>
+            <td className="song">
+              <span className="title">METEOR</span>
+            </td>
+            <td className="artist">창모</td>
+            <td className="play">play</td>
+            <td className="playlist">playlist</td>
+          </tr>
+          <tr>
+            <td className="rankNum">100</td>
             <td className="thumb">
               <img
                 src="https://cdn.music-flo.com/image/album/026/281/04/04/404281026_5de0be5f.jpg?1575009888883/dims/resize/140x140/quality/90"
