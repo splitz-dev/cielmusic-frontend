@@ -19,7 +19,6 @@ const InputContainer = styled.div`
     background: transparent;
     -webkit-appearance: none;
     font-size: 1.1rem;
-    font-weight: 700;
     outline: none;
     padding: 5px 0;
   }
