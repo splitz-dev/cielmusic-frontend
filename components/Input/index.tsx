@@ -12,6 +12,7 @@ const InputContainer = styled.div`
   line-height: 1.6;
   margin-bottom: 12px;
   transition: all 0.5s ease;
+  &:active,
   &:focus,
   &:hover {
     border: 1.5px solid var(--red);
@@ -32,14 +33,8 @@ const InputContainer = styled.div`
   }
 `
 
-interface InputInterface {
-  ref?: any
+interface InputInterface extends React.InputHTMLAttributes<HTMLInputElement> {
   label?: string | undefined
-  placeholder?: string | undefined
-  value?: string | undefined
-  type?: string | undefined
-  name?: string | undefined
-  onChange?: ((event: React.ChangeEvent<HTMLInputElement>) => void) | undefined
 }
 
 const Input: React.FC<InputInterface> = props => {
