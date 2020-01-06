@@ -52,7 +52,6 @@ const PasswordFindLink = styled.a`
 const Input = dynamic(() => import('../../Input'))
 
 const LoginForm: React.FC = props => {
-  const inputRef = useRef<HTMLInputElement>(null)
   const onSubmit = (form: { email: string; password: string }): void => {
     console.log(form)
   }
@@ -79,23 +78,12 @@ const LoginForm: React.FC = props => {
       email: '',
       password: '',
     })
-    if (!inputRef.current) {
-      return
-    }
-    inputRef.current.focus()
   }
 
   return (
     <FormWrapper>
       <StyledForm onSubmit={handleSubmit}>
-        <Input
-          type="email"
-          name="email"
-          value={email}
-          onChange={onChange}
-          ref={inputRef}
-          label="이메일"
-        />
+        <Input type="email" name="email" value={email} onChange={onChange} label="이메일" />
         <Input
           type="password"
           name="password"
