@@ -35,6 +35,7 @@ const ButtonWrapper = styled.div`
   justify-content: space-between;
   margin-top: 30px;
   margin-bottom: 10px;
+  padding-right: 10px;
   .register-link {
     font-size: 15px;
     color: var(--gray-300);
