@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 
-import LoginLayout from '../../components/Layout/Login'
+import LoginLayout from '../../components/PageComponent/Login'
 import Container from '../../components/Container'
 
 const Login: React.FC = () => (
