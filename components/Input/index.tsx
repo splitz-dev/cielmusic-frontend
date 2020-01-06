@@ -3,12 +3,13 @@ import styled from '@emotion/styled'
 
 const InputContainer = styled.div`
   display: inline-block;
-  padding: 10px 20px;
+  padding: 10px 30px;
   width: 100%;
   background: var(--gray-600);
-  border-radius: 24px;
+  border-radius: 32px;
   outline: none;
-  line-height: 1.5;
+  line-height: 1.6;
+  margin-bottom: 12px;
   &:focus {
     outline: none;
   }
@@ -17,8 +18,10 @@ const InputContainer = styled.div`
     border: 0;
     background: transparent;
     -webkit-appearance: none;
-    font-size: 1rem;
+    font-size: 1.1rem;
+    font-weight: 700;
     outline: none;
+    padding: 5px 0;
   }
   .label {
     display: block;
