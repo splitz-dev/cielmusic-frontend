@@ -22,13 +22,13 @@ const InputContainer = styled.div`
     border: 0;
     background: transparent;
     -webkit-appearance: none;
-    font-size: 1.1rem;
+    font-size: 1rem;
     outline: none;
     padding: 5px 0;
   }
   .label {
     display: block;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: var(--gray-300);
   }
 `
