@@ -38,15 +38,21 @@ interface InputInterface extends React.InputHTMLAttributes<HTMLInputElement> {
 }
 
 const Input: React.FC<InputInterface> = props => {
+  const thisInputId = String(Math.floor(Math.random() * (1000 - 1 + 1)) + 1)
   return (
     <>
       <InputContainer>
         {(() => {
           if (props.hasOwnProperty('label')) {
-            return <span className="label">{props.label}</span>
+            return (
+              <label className="label" htmlFor={thisInputId}>
+                {props.label}
+              </label>
+            )
           }
         })()}
         <input
+          id={thisInputId}
           placeholder={props.hasOwnProperty('placeholder') ? props.placeholder : undefined}
           value={props.hasOwnProperty('value') ? props.value : undefined}
           name={props.hasOwnProperty('name') ? props.name : undefined}
