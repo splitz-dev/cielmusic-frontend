@@ -5,13 +5,16 @@ const InputContainer = styled.div`
   display: inline-block;
   padding: 10px 30px;
   width: 100%;
+  border: 1px solid transparent;
   background: var(--gray-600);
   border-radius: 32px;
   outline: none;
   line-height: 1.6;
   margin-bottom: 12px;
-  &:focus {
-    outline: none;
+  transition: all 0.5s ease;
+  &:focus,
+  &:hover {
+    border: 1px solid var(--blue-2);
   }
   input {
     width: 100%;
