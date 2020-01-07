@@ -9,4 +9,7 @@ module.exports = withSass({
     config.optimization.minimizer.push(new OptimizeCSSAssetsPlugin({}))
     return config
   },
+  devIndicators: {
+    autoPrerender: false,
+  },
 })
