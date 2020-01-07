@@ -20,8 +20,8 @@ const MainLayout: React.FC = props => {
       <MainController>
         <Header />
         {props.children}
-        <Playbar />
       </MainController>
+      <Playbar />
     </>
   )
 }

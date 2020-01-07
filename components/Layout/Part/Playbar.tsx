@@ -7,12 +7,12 @@ const StyledPlaybar = styled.section`
   align-items: center;
   position: absolute;
   bottom: 0;
-  width: calc(100% - 210px);
+  width: calc(100%);
   height: 77px;
-  padding: 0 30px;
+  padding: 0 25px;
   background: var(--gray-700);
   box-shadow: 0px 0px 6px 1px rgba(54, 54, 54, 0.15);
-  z-index: 500;
+  z-index: 1500;
   svg {
     cursor: pointer;
   }
@@ -32,6 +32,7 @@ const StyledPlaybar = styled.section`
       display: block;
       margin-left: 15px;
       padding-bottom: 3px;
+      line-height: 1.4;
       p {
         cursor: pointer;
       }
