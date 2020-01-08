@@ -10,6 +10,7 @@ const SidebarElement = styled.aside`
   background: var(--gray-600);
   width: 210px;
   height: 100vh;
+  z-index: 1000;
   .section- {
     &Logo {
       height: 55px;

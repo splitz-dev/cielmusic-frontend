@@ -10,6 +10,7 @@ const StyledRankingTable = styled.table`
   thead {
     th {
       font-weight: 400;
+      font-size: 0.8rem;
       padding: 10px 0.7rem;
       &.song,
       &.artist {
@@ -30,6 +31,7 @@ const StyledRankingTable = styled.table`
         width: 80px;
         img {
           height: 60px;
+          border-radius: 16px;
         }
       }
       .song {
@@ -47,6 +49,13 @@ const StyledRankingTable = styled.table`
         width: 70px;
         font-weight: 700;
         font-size: 1.2rem;
+      }
+      svg {
+        width: 20px;
+      }
+      .play,
+      .playlist {
+        width: 100px;
       }
     }
   }
@@ -72,7 +81,7 @@ const RankingTable: React.FC = () => {
         </thead>
         <tbody>
           <tr>
-            <td className="rankNum">1</td>
+            <td className="rankNum">99</td>
             <td className="thumb">
               <img
                 src="https://cdn.music-flo.com/image/album/026/281/04/04/404281026_5de0be5f.jpg?1575009888883/dims/resize/140x140/quality/90"
@@ -83,8 +92,83 @@ const RankingTable: React.FC = () => {
               <span className="title">METEOR</span>
             </td>
             <td className="artist">창모</td>
-            <td className="play">play</td>
-            <td className="playlist">playlist</td>
+            <td className="play">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+              </svg>
+            </td>
+            <td className="playlist">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="16"></line>
+                <line x1="8" y1="12" x2="16" y2="12"></line>
+              </svg>
+            </td>
+          </tr>
+          <tr>
+            <td className="rankNum">100</td>
+            <td className="thumb">
+              <img
+                src="https://cdn.music-flo.com/image/album/026/281/04/04/404281026_5de0be5f.jpg?1575009888883/dims/resize/140x140/quality/90"
+                alt="METEOR - 창모"
+              />
+            </td>
+            <td className="song">
+              <span className="title">METEOR</span>
+            </td>
+            <td className="artist">창모</td>
+            <td className="play">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+              </svg>
+            </td>
+            <td className="playlist">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="16"></line>
+                <line x1="8" y1="12" x2="16" y2="12"></line>
+              </svg>
+            </td>
           </tr>
         </tbody>
       </StyledRankingTable>

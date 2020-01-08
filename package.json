@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "cross-env NODE_ENV=development node ./server",
     "build": "next build",
-    "start": "next start",
+    "start": "cross-env NODE_ENV=production node ./server",
     "lint": "eslint .",
     "storybook": "start-storybook -p 6006 -c .storybook"
   },
@@ -21,6 +21,8 @@
     "@zeit/next-sass": "^1.0.1",
     "axios": "^0.19.1",
     "babel-plugin-emotion": "^10.0.27",
+    "cross-env": "^6.0.3",
+    "express": "^4.17.1",
     "next": "9.1.6",
     "next-redux-saga": "^4.1.2",
     "next-redux-wrapper": "^4.0.1",
@@ -41,6 +43,7 @@
     "@storybook/react": "^5.2.8",
     "@types/node": "^13.1.0",
     "@types/react": "^16.9.17",
+    "@types/react-youtube": "^7.6.2",
     "@typescript-eslint/eslint-plugin": "^2.13.0",
     "@typescript-eslint/parser": "^2.13.0",
     "babel-eslint": "^10.0.3",
@@ -57,6 +60,7 @@
     "eslint-plugin-react-hooks": "^2.3.0",
     "prettier": "^1.19.1",
     "redux-devtools-extension": "^2.13.8",
+    "react-youtube": "^7.9.0",
     "typescript": "^3.7.4",
     "webpack": "^4.41.4"
   }

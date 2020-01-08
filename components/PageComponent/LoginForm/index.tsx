@@ -1,26 +1,13 @@
 import React, { useState, useRef } from 'react'
+import dynamic from 'next/dynamic'
 import styled from '@emotion/styled'
-import Button from '../Button'
+import Button from '../../Button'
 import Link from 'next/link'
 
 const FormWrapper = styled.div`
-  display: inline-block;
-  width: 40%;
-  text-align: center;
-
-  @media (max-width: 1025px) {
-    width: 50%;
-  }
-  @media (max-width: 769px) {
-    width: 70%;
-  }
-  @media (max-width: 600px) {
-    width: 80%;
-  }
-
-  @media (max-width: 426px) {
-    width: 95%;
-  }
+  display: block;
+  width: 500px;
+  margin: 0 auto;
 `
 
 const StyledForm = styled.form`
@@ -31,44 +18,29 @@ const StyledForm = styled.form`
   border-radius: 30px;
   padding-top: 20px;
 `
-const StyledInput = styled.input`
-  margin-top: 30px;
-  display: block;
-  height: 48px;
-  width: 100%;
-  border: 0;
-  &:focus {
-    outline: 0;
-  }
-`
+
 const StyledButton = styled(Button)`
-  flex: 1;
+  font-size: 18px;
   font-weight: 700;
-  padding: 0.5rem 3rem;
-  box-shadow: 0 0 6px 0 rgba(157, 96, 212, 0.5);
+  box-shadow: 0 2px 4px 0 rgba(157, 96, 212, 0.5);
   background-image: linear-gradient(101deg, #f95d68, #fa964d);
-  background-origin: border-box;
-  background-clip: border-box;
-  box-shadow: 2px 1000px 1px #fff inset;
-  &:hover {
-    box-shadow: none;
-    color: white;
-  }
+  color: #fff;
   @media (max-width: 1000px) {
     padding: 0.6rem 1.2rem;
   }
 `
 const ButtonWrapper = styled.div`
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin-top: 30px;
   margin-bottom: 10px;
-`
-
-const LoginButton = styled(StyledButton)`
-  margin-right: 5px;
-`
-const RegisterButton = styled(StyledButton)`
-  margin-left: 5px;
+  padding-right: 10px;
+  .register-link {
+    font-size: 15px;
+    color: var(--gray-300);
+    text-decoration: none;
+  }
 `
 
 const PasswordFindLink = styled.a`
@@ -77,8 +49,9 @@ const PasswordFindLink = styled.a`
   color: white;
 `
 
+const Input = dynamic(() => import('../../Input'))
+
 const LoginForm: React.FC = props => {
-  const inputRef = useRef<HTMLInputElement>(null)
   const onSubmit = (form: { email: string; password: string }): void => {
     console.log(form)
   }
@@ -105,34 +78,23 @@ const LoginForm: React.FC = props => {
       email: '',
       password: '',
     })
-    if (!inputRef.current) {
-      return
-    }
-    inputRef.current.focus()
   }
 
   return (
     <FormWrapper>
       <StyledForm onSubmit={handleSubmit}>
-        <StyledInput
-          type="email"
-          name="email"
-          value={email}
-          onChange={onChange}
-          ref={inputRef}
-          placeholder="이메일"
-        />
-        <StyledInput
+        <Input type="email" name="email" value={email} onChange={onChange} label="이메일" />
+        <Input
           type="password"
           name="password"
           value={password}
           onChange={onChange}
-          placeholder="비밀번호"
+          label="비밀번호"
         />
         <ButtonWrapper>
-          <LoginButton type="submit">로그인</LoginButton>
-          <Link href="/auth/register">
-            <RegisterButton>회원가입</RegisterButton>
+          <StyledButton type="submit">로그인</StyledButton>
+          <Link href="/auth/register" passHref>
+            <a className="register-link">회원가입</a>
           </Link>
         </ButtonWrapper>
       </StyledForm>
