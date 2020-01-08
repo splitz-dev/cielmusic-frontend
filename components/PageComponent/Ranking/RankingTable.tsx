@@ -53,6 +53,10 @@ const StyledRankingTable = styled.table`
       svg {
         width: 20px;
       }
+      .play,
+      .playlist {
+        width: 100px;
+      }
     }
   }
 `
