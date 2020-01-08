@@ -2,9 +2,20 @@ import React from 'react'
 import YouTube from 'react-youtube'
 
 const youtubePlayer = () => {
+  const onReady = () => {
+    console.log('👍')
+  }
   return (
     <>
-      <YouTube />
+      <YouTube
+        opts={{
+          width: '640',
+          playerVars: {
+            autoplay: 1,
+          },
+        }}
+        onReady={onReady}
+      />
     </>
   )
 }
