@@ -5,7 +5,11 @@ import withRedux from 'next-redux-wrapper'
 import withReduxSaga from 'next-redux-saga'
 import createStore from '../lib/store'
 import '../styles/core.scss'
-import { WithSagaTaskStore } from '../lib/interfaces'
+import { Store } from 'redux'
+import { Task } from 'redux-saga'
+export interface WithSagaTaskStore extends Store {
+  sagaTask?: Task
+}
 
 interface MyAppProps {
   store: WithSagaTaskStore
