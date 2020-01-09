@@ -3,6 +3,9 @@ import dynamic from 'next/dynamic'
 import styled from '@emotion/styled'
 import Button from '../../Button'
 import Link from 'next/link'
+import { useDispatch, useSelector } from 'react-redux'
+import { loginAsync } from '../../../modules/login'
+import { RootState } from '../../../modules'
 
 const FormWrapper = styled.div`
   display: block;
@@ -52,14 +55,16 @@ const PasswordFindLink = styled.a`
 const Input = dynamic(() => import('../../Input'))
 
 const LoginForm: React.FC = props => {
-  const onSubmit = (form: { email: string; password: string }): void => {
-    console.log(form)
-  }
+  const dispatch = useDispatch()
+  const { data, loading, error } = useSelector((state: RootState) => state.login.login)
+
   const [form, setForm] = useState({
     email: '',
     password: '',
   })
-
+  const onSubmit = (form: { email: string; password: string }): void => {
+    dispatch(loginAsync.request({ email, password }))
+  }
   const { email, password } = form
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
