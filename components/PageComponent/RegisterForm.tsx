@@ -19,16 +19,6 @@ const StyledForm = styled.form`
   padding-top: 20px;
 `
 
-const StyledButton = styled(Button)`
-  font-size: 18px;
-  font-weight: 700;
-  box-shadow: 0 2px 4px 0 rgba(157, 96, 212, 0.5);
-  background-image: linear-gradient(101deg, #f95d68, #fa964d);
-  color: #fff;
-  @media (max-width: 1000px) {
-    padding: 0.6rem 1.2rem;
-  }
-`
 const ButtonWrapper = styled.div`
   display: flex;
   align-items: center;
@@ -41,12 +31,6 @@ const ButtonWrapper = styled.div`
     color: var(--gray-300);
     text-decoration: none;
   }
-`
-
-const PasswordFindLink = styled.a`
-  text-decoration: underline;
-  cursor: pointer;
-  color: white;
 `
 
 const Input = dynamic(() => import('../Input'))
