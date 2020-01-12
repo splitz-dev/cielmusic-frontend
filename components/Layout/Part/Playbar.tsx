@@ -1,11 +1,12 @@
 import React from 'react'
 import styled from '@emotion/styled'
+import YoutubePlayer from '../../Player/YouTube'
 
 const StyledPlaybar = styled.section`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: calc(100%);
   height: 77px;
@@ -63,10 +64,9 @@ const Playbar = () => {
     <>
       <StyledPlaybar>
         <div className="leftSide">
-          <img
-            src="https://i.ytimg.com/vi/jTJUF5rOXBc/sddefault.jpg?sqp=-oaymwEWCJADEOEBIAQqCghqEJQEGHgg6AJIWg&rs=AMzJL3n8Lb6zG3Oy9WqAHVZcLisK9TL45g"
-            alt="METEOR - 창모"
-          />
+          <div>
+            <YoutubePlayer />
+          </div>
           <div className="playInfo">
             <p className="title">Kegarenouta</p>
             <p className="artist">Maigo Hanyu (하뉴 마이고)</p>
