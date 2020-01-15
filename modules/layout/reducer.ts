@@ -7,7 +7,7 @@ const initState: LayoutState = false
 
 export const layout = createReducer<LayoutState, LayoutAction>(initState).handleAction(
   LayoutChange,
-  (state: LayoutState) => {
+  (state: LayoutState, action: any) => {
     if (state === false) {
       state = true
     } else {

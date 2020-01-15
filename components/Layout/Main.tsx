@@ -1,8 +1,9 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import dynamic from 'next/dynamic'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { RootState } from '../../modules/index'
+import { LayoutChange } from '../../modules/layout/actions'
 
 // 레이아웃 구성
 const Sidebar = dynamic(() => import('./Part/Sidebar'))
