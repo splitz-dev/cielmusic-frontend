@@ -3,17 +3,14 @@ import { createReducer } from 'typesafe-actions'
 import { LayoutChange } from './actions'
 import { LayoutState, LayoutAction } from './types'
 
-const initState: LayoutState = false
-
+const initState: LayoutState = {
+  option: false,
+}
 export const layout = createReducer<LayoutState, LayoutAction>(initState).handleAction(
   LayoutChange,
-  (state: LayoutState, action: any) => {
-    if (state === false) {
-      state = true
-    } else {
-      state = false
-    }
-  },
+  (state, action) => ({
+    option: action.payload,
+  }),
 )
 
 export default layout

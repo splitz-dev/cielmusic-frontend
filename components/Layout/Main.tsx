@@ -20,7 +20,7 @@ const MainController = styled.main`
 `
 
 const MainLayout: React.FC = props => {
-  const data = useSelector((state: RootState) => state.layout)
+  const data = useSelector((state: RootState) => state.layout.option)
 
   return (
     <>
