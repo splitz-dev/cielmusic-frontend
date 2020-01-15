@@ -5,11 +5,16 @@ import withReduxSaga from 'next-redux-saga'
 import '../styles/core.scss'
 import createSagaMiddleware from 'redux-saga'
 import rootReducer, { rootSaga } from '../modules'
-import { createStore, applyMiddleware } from 'redux'
-import { composeWithDevTools } from 'redux-devtools-extension'
-import * as actionCreators from '../modules/layout/actions'
+import { createStore, applyMiddleware, compose } from 'redux'
+declare global {
+  interface Window {
+    __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: typeof compose
+  }
+}
 const sagaMiddleware = createSagaMiddleware()
-const composeEnhancers = composeWithDevTools({ actionCreators, trace: true, traceLimit: 25 })
+const composeEnhancers =
+  (typeof window != 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose
+
 const store = createStore(rootReducer, composeEnhancers(applyMiddleware(sagaMiddleware)))
 sagaMiddleware.run(rootSaga)
 class MyApp extends App {
