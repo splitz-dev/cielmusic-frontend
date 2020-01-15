@@ -1,10 +1,12 @@
 import { combineReducers } from 'redux'
 import login from './login/reducer'
+import layout from './layout/reducer'
 import loginSaga from './login/sagas'
 import { all } from 'redux-saga/effects'
 
 const rootReducer = combineReducers({
   login,
+  layout,
 })
 
 // 루트 리듀서를 내보내주세요.
