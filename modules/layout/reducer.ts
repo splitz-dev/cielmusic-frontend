@@ -1,13 +1,20 @@
 import { createReducer } from 'typesafe-actions'
 
-import { loadPlaybarAsync } from './actions'
+import { LayoutChange } from './actions'
+import { LayoutState, LayoutAction } from './types'
 
-export const layout = createReducer(false as boolean)
-  .handleAction([loadPlaybarAsync.request], (state: boolean, action: any) => true)
-  .handleAction(
-    [loadPlaybarAsync.success, loadPlaybarAsync.failure],
-    (state: boolean, action: any) => false,
-  )
+const initState: LayoutState = false
+
+export const layout = createReducer<LayoutState, LayoutAction>(initState).handleAction(
+  LayoutChange,
+  (state: LayoutState) => {
+    if (state === false) {
+      state = true
+    } else {
+      state = false
+    }
+  },
+)
 
 export default layout
 export type TodosState = ReturnType<typeof layout>

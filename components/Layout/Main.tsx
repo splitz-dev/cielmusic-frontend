@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import dynamic from 'next/dynamic'
+import { useSelector } from 'react-redux'
+import { RootState } from '../../modules/index'
 
 // 레이아웃 구성
 const Sidebar = dynamic(() => import('./Part/Sidebar'))
@@ -17,6 +19,8 @@ const MainController = styled.main`
 `
 
 const MainLayout: React.FC = props => {
+  const data = useSelector((state: RootState) => state.layout)
+
   return (
     <>
       <Sidebar />
@@ -25,7 +29,11 @@ const MainLayout: React.FC = props => {
         {props.children}
       </MainController>
       <Playbar />
-      <PlayInfo />
+      {() => {
+        if (data === true) {
+          return <PlayInfo />
+        }
+      }}
     </>
   )
 }
