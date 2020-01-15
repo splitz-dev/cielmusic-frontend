@@ -8,8 +8,8 @@ const initState: LayoutState = {
 }
 export const layout = createReducer<LayoutState, LayoutAction>(initState).handleAction(
   LayoutChange,
-  (state, action) => ({
-    option: action.payload,
+  state => ({
+    option: !state.option,
   }),
 )
 
