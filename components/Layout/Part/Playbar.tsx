@@ -63,7 +63,6 @@ const StyledPlaybar = styled.section`
 
 const Playbar: React.FC = () => {
   const dispatch = useDispatch()
-  const layout = useSelector((state: RootState) => state.layout)
 
   const fullPlaybar = () => {
     dispatch(LayoutChange(true))
