@@ -72,7 +72,7 @@ const Table: React.FC<TableProps> = props => {
         <td className="song">
           <span className="title">{props.title}</span>
         </td>
-        <td className="artist">{props.artist}</td>
+        <td className="artist">{props.artist.name}</td>
         <td className="play">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -81,9 +81,9 @@ const Table: React.FC<TableProps> = props => {
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           >
             <polygon points="5 3 19 12 5 21 5 3"></polygon>
           </svg>
@@ -96,9 +96,9 @@ const Table: React.FC<TableProps> = props => {
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           >
             <circle cx="12" cy="12" r="10"></circle>
             <line x1="12" y1="8" x2="12" y2="16"></line>
@@ -108,6 +108,45 @@ const Table: React.FC<TableProps> = props => {
       </tr>
     )
   }
+
+  const RenderTable1 = () => {
+    if (props.isRanking === false) {
+      props.data.forEach((row: RowData) => {
+        return (
+          <TableRowAtData id={row.id} thumb={row.thumb} title={row.title} artist={row.artist} />
+        )
+      })
+    } else {
+      let i: number
+      props.data.forEach((row: RowData) => {
+        i++
+        return (
+          <TableRowAtData
+            id={row.id}
+            thumb={row.thumb}
+            title={row.title}
+            artist={row.artist}
+            rankNum={i}
+          />
+        )
+      })
+    }
+  }
+
+  let i = 0
+
+  const RenderTable = props.data.map(item => {
+    i++
+    return (
+      <TableRowAtData
+        id={item.id}
+        thumb={item.thumb}
+        title={item.title}
+        artist={item.artist}
+        rankNum={props.isRanking ? i : undefined}
+      />
+    )
+  })
 
   return (
     <StyledTable>
@@ -125,36 +164,7 @@ const Table: React.FC<TableProps> = props => {
           <th scope="col">재생목록</th>
         </tr>
       </thead>
-      <tbody>
-        {() => {
-          if (props.isRanking === false) {
-            props.data.forEach((row: RowData) => {
-              return (
-                <TableRowAtData
-                  id={row.id}
-                  thumb={row.thumb}
-                  title={row.title}
-                  artist={row.artist}
-                />
-              )
-            })
-          } else {
-            let i: number
-            props.data.forEach((row: RowData) => {
-              i++
-              return (
-                <TableRowAtData
-                  id={row.id}
-                  thumb={row.thumb}
-                  title={row.title}
-                  artist={row.artist}
-                  rankNum={i}
-                />
-              )
-            })
-          }
-        }}
-      </tbody>
+      <tbody>{RenderTable}</tbody>
     </StyledTable>
   )
 }
@@ -169,12 +179,17 @@ Table.defaultProps = {
   isRanking: false,
 }
 
-interface RowData {
+export interface RowData {
   id: string
   thumb: string
   title: string
-  artist: object
+  artist: ArtistData
   rankNum?: number
+}
+
+interface ArtistData {
+  id: number
+  name: string
 }
 
 export default Table
