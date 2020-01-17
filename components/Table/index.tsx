@@ -65,7 +65,7 @@ const Table: React.FC<TableProps> = props => {
   const TableRowAtData: React.FC<RowData> = props => {
     return (
       <tr>
-        <td className="rankNum">{props.rankNum}</td>
+        {props.rankNum ? <td className="rankNum">{props.rankNum}</td> : <></>}
         <td className="thumb">
           <img src={props.thumb} alt={props.title + ' - ' + props.artist} />
         </td>
@@ -152,7 +152,7 @@ const Table: React.FC<TableProps> = props => {
     <StyledTable>
       <thead>
         <tr>
-          <th scope="col">#</th>
+          {props.isRanking ? <th scope="col">#</th> : <></>}
           <th colSpan={1}></th>
           <th scope="col" className="song">
             곡
