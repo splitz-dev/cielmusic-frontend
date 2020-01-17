@@ -61,21 +61,18 @@ const StyledTable = styled.table`
   }
 `
 
-const Table: React.FC = () => {
-  const TableRowAtData = () => {
+const Table: React.FC<TableProps> = props => {
+  const TableRowAtData: React.FC<RowData> = props => {
     return (
       <tr>
-        <td className="rankNum">1</td>
+        <td className="rankNum">{props.rankNum}</td>
         <td className="thumb">
-          <img
-            src="https://cdn.music-flo.com/image/album/026/281/04/04/404281026_5de0be5f.jpg?1575009888883/dims/resize/140x140/quality/90"
-            alt="METEOR - 창모"
-          />
+          <img src={props.thumb} alt={props.title + ' - ' + props.artist} />
         </td>
         <td className="song">
-          <span className="title">METEOR</span>
+          <span className="title">{props.title}</span>
         </td>
-        <td className="artist">창모</td>
+        <td className="artist">{props.artist}</td>
         <td className="play">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -130,11 +127,54 @@ const Table: React.FC = () => {
       </thead>
       <tbody>
         {() => {
-          return <TableRowAtData />
+          if (props.isRanking === false) {
+            props.data.forEach((row: RowData) => {
+              return (
+                <TableRowAtData
+                  id={row.id}
+                  thumb={row.thumb}
+                  title={row.title}
+                  artist={row.artist}
+                />
+              )
+            })
+          } else {
+            let i: number
+            props.data.forEach((row: RowData) => {
+              i++
+              return (
+                <TableRowAtData
+                  id={row.id}
+                  thumb={row.thumb}
+                  title={row.title}
+                  artist={row.artist}
+                  rankNum={i}
+                />
+              )
+            })
+          }
         }}
       </tbody>
     </StyledTable>
   )
+}
+
+interface TableProps {
+  data: Array<RowData>
+  isRanking?: boolean
+}
+
+// TableProps 기본 값 지정
+Table.defaultProps = {
+  isRanking: false,
+}
+
+interface RowData {
+  id: string
+  thumb: string
+  title: string
+  artist: object
+  rankNum?: number
 }
 
 export default Table
