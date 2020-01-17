@@ -2,8 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 import YoutubePlayer from '../../Player/YouTube'
 import { LayoutChange } from '../../../modules/layout'
-import { useDispatch, useSelector } from 'react-redux'
-import { RootState } from '../../../modules'
+import { useDispatch } from 'react-redux'
 const StyledPlaybar = styled.section`
   display: flex;
   justify-content: space-between;
@@ -65,7 +64,7 @@ const Playbar: React.FC = () => {
   const dispatch = useDispatch()
 
   const fullPlaybar = () => {
-    dispatch(LayoutChange(true))
+    dispatch(LayoutChange())
   }
 
   return (

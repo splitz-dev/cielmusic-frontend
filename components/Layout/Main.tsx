@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import dynamic from 'next/dynamic'
-import { useSelector } from 'react-redux'
-import { RootState } from '../../modules/index'
-
+import { LayoutChange } from '../../modules/layout'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootState } from '../../modules'
 // 레이아웃 구성
 const Sidebar = dynamic(() => import('./Part/Sidebar'))
 const Header = dynamic(() => import('./Part/Header'))
@@ -19,8 +19,14 @@ const MainController = styled.main`
 `
 
 const MainLayout: React.FC = props => {
-  const data = useSelector((state: RootState) => state.layout.option)
+  const data = useSelector((state: RootState) => state.layout)
 
+  const playInfo = () => {
+    if (data.option === true) {
+      console.log(data.option)
+      return <PlayInfo />
+    }
+  }
   return (
     <>
       <Sidebar />
@@ -29,11 +35,7 @@ const MainLayout: React.FC = props => {
         {props.children}
       </MainController>
       <Playbar />
-      {() => {
-        if (data === true) {
-          return <PlayInfo />
-        }
-      }}
+      {playInfo()}
     </>
   )
 }
