@@ -7,7 +7,6 @@ const StyledYoutubePlayer = styled.div`
 `
 
 const youtubePlayer: React.FC = React.memo(props => {
-  console.log('👍 YouTube Rendered')
   const onReady = () => {
     console.log('👍 YouTube Player ready')
   }
