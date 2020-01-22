@@ -1,8 +1,7 @@
-import React, { useState, useRef } from 'react'
+import React, { useState } from 'react'
 import dynamic from 'next/dynamic'
 import styled from '@emotion/styled'
 import Button from '../Button'
-import Link from 'next/link'
 
 const FormWrapper = styled.div`
   display: block;
@@ -82,7 +81,7 @@ const RegisterForm: React.FC = props => {
         />
         <Input
           type="password"
-          name="password"
+          name="password-confirm"
           value={passwordConfirm}
           onChange={onChange}
           label="비밀번호 확인"
