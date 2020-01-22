@@ -109,36 +109,13 @@ const Table: React.FC<TableProps> = props => {
     )
   }
 
-  const RenderTable1 = () => {
-    if (props.isRanking === false) {
-      props.data.forEach((row: RowData) => {
-        return (
-          <TableRowAtData id={row.id} thumb={row.thumb} title={row.title} artist={row.artist} />
-        )
-      })
-    } else {
-      let i: number
-      props.data.forEach((row: RowData) => {
-        i++
-        return (
-          <TableRowAtData
-            id={row.id}
-            thumb={row.thumb}
-            title={row.title}
-            artist={row.artist}
-            rankNum={i}
-          />
-        )
-      })
-    }
-  }
-
   let i = 0
 
   const RenderTable = props.data.map(item => {
     i++
     return (
       <TableRowAtData
+        key={i}
         id={item.id}
         thumb={item.thumb}
         title={item.title}
@@ -180,6 +157,7 @@ Table.defaultProps = {
 }
 
 export interface RowData {
+  key?: number
   id: string
   thumb: string
   title: string
