@@ -48,7 +48,7 @@ const SearchForm: React.FC = () => {
   }, [keyword])
 
   const atSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
-    Router.push('/search/' + input)
+    Router.push('/search/빌었어')
     e.preventDefault()
   }
 
@@ -58,7 +58,7 @@ const SearchForm: React.FC = () => {
 
   return (
     <SearchFormStyle onSubmit={atSubmit}>
-      <button type="submit">
+      <button>
         <img src="/assets/search.svg" alt="Ciel Music 검색하기" />
       </button>
       <input

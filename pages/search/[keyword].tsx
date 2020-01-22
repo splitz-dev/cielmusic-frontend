@@ -6,7 +6,6 @@ import { useRouter } from 'next/router'
 import { RowData } from '../../components/Table/index'
 
 const Table = dynamic(() => import('../../components/Table'))
-const MainLayout = dynamic(() => import('../../components/Layout/Main'))
 const Container = dynamic(() => import('../../components/Container'))
 
 const StyledSection = styled.div`
