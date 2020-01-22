@@ -3,8 +3,8 @@ import { ActionType } from 'typesafe-actions'
 export type PlayerAction = ActionType<typeof actions>
 
 export type PlayerState = {
-  loaded?: boolean
-  state?: number // YouTube Player 재생 상태
+  loaded: boolean
+  state: number
   songInfo?: {
     title?: string
     artist?: string

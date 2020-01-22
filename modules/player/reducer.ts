@@ -1,17 +1,18 @@
 import { createReducer } from 'typesafe-actions'
 
-// import { playerChange } from './actions'
-import { PlayerState, PlayerAction } from './types'
 import { ChangeLoadState } from './actions'
+import { PlayerAction, PlayerState } from './types'
 
 const initState: PlayerState = {
   loaded: false,
-  state: -1,
+  state: 0,
 }
-
-export const layout = createReducer<PlayerState, PlayerAction>(initState).handleAction(
+export const player = createReducer<PlayerState, PlayerAction>(initState).handleAction(
   ChangeLoadState,
-  (state: PlayerState, action: PlayerAction) => state + action.payload),
+  (state, action) => ({
+    loaded: action.payload.loaded,
+    state: action.payload.state,
+  }),
 )
 
-export default layout
+export default player
