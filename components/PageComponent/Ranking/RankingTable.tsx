@@ -8,7 +8,6 @@ const Table = dynamic(() => import('../../Table/index'))
 const RankingTable: React.FC = () => {
   const TableData: Array<RowData> = [
     {
-      key: 1,
       id: '123',
       title: '빌었어',
       artist: {

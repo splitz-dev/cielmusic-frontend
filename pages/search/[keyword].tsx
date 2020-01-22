@@ -23,7 +23,6 @@ const SearchResults: React.FC = () => {
 
   const TableData: Array<RowData> = [
     {
-      key: 1,
       id: '123',
       title: '빌었어',
       artist: {
@@ -34,7 +33,6 @@ const SearchResults: React.FC = () => {
         'https://cdn.music-flo.com/image/album/026/281/04/04/404281026_5de0be5f.jpg?1575009888883/dims/resize/140x140/quality/90',
     },
     {
-      key: 2,
       id: '123',
       title: 'METEOR',
       artist: {
