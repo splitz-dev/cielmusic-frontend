@@ -13,11 +13,9 @@ const Login: React.FC = () => (
       <title>로그인 • Ciel Music</title>
       <link rel="icon" href="/favicon.ico" />
     </Head>
-    <MainLayout>
-      <Container>
-        <RegisterForm />
-      </Container>
-    </MainLayout>
+    <Container>
+      <RegisterForm />
+    </Container>
   </>
 )
 

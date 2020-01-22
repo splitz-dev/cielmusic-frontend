@@ -6,9 +6,10 @@ const StyledYoutubePlayer = styled.div`
   width: 100%;
 `
 
-const youtubePlayer = () => {
+const youtubePlayer: React.FC = React.memo(props => {
+  console.log('👍 YouTube Rendered')
   const onReady = () => {
-    console.log('👍')
+    console.log('👍 YouTube Player ready')
   }
   return (
     <StyledYoutubePlayer>
@@ -24,6 +25,6 @@ const youtubePlayer = () => {
       />
     </StyledYoutubePlayer>
   )
-}
+})
 
 export default youtubePlayer

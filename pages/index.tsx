@@ -12,11 +12,9 @@ const Home: React.FC = () => (
       <title>홈 • Ciel Music</title>
       <link rel="icon" href="/favicon.ico" />
     </Head>
-    <MainLayout>
-      <Container>
-        <RankingJumbotron />
-      </Container>
-    </MainLayout>
+    <Container>
+      <RankingJumbotron />
+    </Container>
   </>
 )
 

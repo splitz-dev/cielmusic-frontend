@@ -6,6 +6,9 @@ import '../styles/core.scss'
 import createSagaMiddleware from 'redux-saga'
 import rootReducer, { rootSaga } from '../modules'
 import { createStore, applyMiddleware, compose } from 'redux'
+
+import Layout from '../components/Layout/Main'
+
 declare global {
   interface Window {
     __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: typeof compose
@@ -27,7 +30,9 @@ class MyApp extends App {
     const { Component, pageProps } = this.props
     return (
       <Provider store={store}>
-        <Component {...pageProps} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </Provider>
     )
   }

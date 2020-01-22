@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from '@emotion/styled'
+import Router, { useRouter } from 'next/router'
+
 const SearchFormStyle = styled.form`
   border-radius: 100px;
   width: 400px;
@@ -34,12 +36,36 @@ const SearchFormStyle = styled.form`
 `
 
 const SearchForm: React.FC = () => {
+  const router = useRouter()
+  const { keyword } = router.query
+
+  const [input, setInput] = useState('')
+
+  useEffect(() => {
+    if (keyword && keyword !== '') {
+      setInput(String(keyword))
+    }
+  }, [keyword])
+
+  const atSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
+    Router.push('/search/' + input)
+    e.preventDefault()
+  }
+
+  const atChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInput(e.target.value)
+  }
+
   return (
-    <SearchFormStyle>
+    <SearchFormStyle onSubmit={atSubmit}>
       <button type="submit">
         <img src="/assets/search.svg" alt="Ciel Music 검색하기" />
       </button>
-      <input placeholder="제목, 아티스트, 앨범 등을 검색해보세요!" />
+      <input
+        placeholder="제목, 아티스트, 앨범 등을 검색해보세요!"
+        value={input}
+        onChange={atChange}
+      />
     </SearchFormStyle>
   )
 }

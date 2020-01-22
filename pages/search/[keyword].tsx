@@ -51,18 +51,16 @@ const SearchResults: React.FC = () => {
         <title>실시간 차트 • Ciel Music</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <MainLayout>
-        <Container>
-          <StyledSection>
-            <div className="titleSection">
-              <h1>'{keyword}'에 대한 검색 결과입니다.</h1>
-            </div>
-            <div className="searchResultSection">
-              <Table data={TableData} />
-            </div>
-          </StyledSection>
-        </Container>
-      </MainLayout>
+      <Container>
+        <StyledSection>
+          <div className="titleSection">
+            <h1>'{keyword}'에 대한 검색 결과입니다.</h1>
+          </div>
+          <div className="searchResultSection">
+            <Table data={TableData} />
+          </div>
+        </StyledSection>
+      </Container>
     </>
   )
 }

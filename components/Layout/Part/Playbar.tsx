@@ -61,6 +61,7 @@ const StyledPlaybar = styled.section`
 `
 
 const Playbar: React.FC = () => {
+  console.log('👍 playbar Rendered')
   const dispatch = useDispatch()
 
   const fullPlaybar = () => {
