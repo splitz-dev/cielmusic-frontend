@@ -49,6 +49,7 @@ const SearchForm: React.FC = () => {
 
   const atSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
     Router.push('/search/[keyword]', '/search/' + input)
+
     e.preventDefault()
   }
 
