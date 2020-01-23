@@ -1,7 +1,7 @@
 import React from 'react'
-import YouTube from 'react-youtube'
+import YouTube, { YouTubeProps } from 'react-youtube'
 import styled from '@emotion/styled'
-import { ChangeLoadState } from '../../modules/player'
+import { ChangeLoadState, ChangeState } from '../../modules/player'
 import { useDispatch, useSelector } from 'react-redux'
 
 const StyledYoutubePlayer = styled.div`
@@ -15,6 +15,11 @@ const youtubePlayer: React.FC = React.memo(props => {
     console.log('👍 YouTube Player ready')
     dispatch(ChangeLoadState(true))
   }
+
+  const onStateChange = (event: any) => {
+    dispatch(ChangeState(event.target.getPlayerState()))
+  }
+
   return (
     <StyledYoutubePlayer>
       <YouTube
@@ -26,6 +31,7 @@ const youtubePlayer: React.FC = React.memo(props => {
         videoId="DcKa0n2LCLk"
         className="youtubePlayer"
         onReady={onReady}
+        onStateChange={onStateChange}
       />
     </StyledYoutubePlayer>
   )
