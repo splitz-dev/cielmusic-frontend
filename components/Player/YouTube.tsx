@@ -13,7 +13,7 @@ const youtubePlayer: React.FC = React.memo(props => {
 
   const onReady = () => {
     console.log('👍 YouTube Player ready')
-    dispatch(ChangeLoadState()(true))
+    dispatch(ChangeLoadState(true))
   }
   return (
     <StyledYoutubePlayer>

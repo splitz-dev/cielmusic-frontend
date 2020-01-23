@@ -11,7 +11,7 @@ export const player = createReducer<PlayerState, PlayerAction>(initState).handle
   ChangeLoadState,
   (state, action) => ({
     loaded: action.payload.loaded,
-    state: action.payload.state,
+    state: state.state,
   }),
 )
 
