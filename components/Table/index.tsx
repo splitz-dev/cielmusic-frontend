@@ -156,9 +156,12 @@ Table.defaultProps = {
   isRanking: false,
 }
 
-interface ArtistData {
-  id: number
-  name: string
+export interface RowData {
+  key?: number
+  id: string
+  thumb: string
+  title: string
+  artist: ArtistData
+  rankNum?: number
 }
-
 export default Table
