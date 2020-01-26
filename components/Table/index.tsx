@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
+import { Music } from '../../api/search'
 
 const StyledTable = styled.table`
   width: 100%;
@@ -62,15 +63,14 @@ const StyledTable = styled.table`
 `
 
 const Table: React.FC<TableProps> = props => {
-  const TableRowAtData: React.FC<RowData> = props => {
-    return (
+  const TableRowAtData: React.FC<Music> = props => {
+    return props.album ? (
       <tr>
-        {props.rankNum ? <td className="rankNum">{props.rankNum}</td> : <></>}
         <td className="thumb">
-          <img src={props.thumb} alt={props.title + ' - ' + props.artist} />
+          <img src={props.album.photo} alt={props.name + ' - ' + props.artist.name} />
         </td>
         <td className="song">
-          <span className="title">{props.title}</span>
+          <span className="title">{props.name}</span>
         </td>
         <td className="artist">{props.artist.name}</td>
         <td className="play">
@@ -106,30 +106,30 @@ const Table: React.FC<TableProps> = props => {
           </svg>
         </td>
       </tr>
-    )
+    ) : null
   }
 
   let i = 0
 
-  const RenderTable = props.data.map(item => {
-    i++
-    return (
-      <TableRowAtData
-        key={i}
-        id={item.id}
-        thumb={item.thumb}
-        title={item.title}
-        artist={item.artist}
-        rankNum={props.isRanking ? i : undefined}
-      />
-    )
-  })
+  const RenderTable = props.data
+    ? props.data.map(item => {
+        i++
+        return (
+          <TableRowAtData
+            key={i}
+            id={item.id}
+            name={item.name}
+            album={item.album}
+            artist={item.artist}
+          />
+        )
+      })
+    : null
 
   return (
     <StyledTable>
       <thead>
         <tr>
-          {props.isRanking ? <th scope="col">#</th> : <></>}
           <th colSpan={1}></th>
           <th scope="col" className="song">
             곡
@@ -141,28 +141,19 @@ const Table: React.FC<TableProps> = props => {
           <th scope="col">재생목록</th>
         </tr>
       </thead>
-      <tbody>{RenderTable}</tbody>
+      <tbody>{RenderTable ? RenderTable : null}</tbody>
     </StyledTable>
   )
 }
 
 interface TableProps {
-  data: Array<RowData>
+  data: Array<Music> | null
   isRanking?: boolean
 }
 
 // TableProps 기본 값 지정
 Table.defaultProps = {
   isRanking: false,
-}
-
-export interface RowData {
-  key?: number
-  id: string
-  thumb: string
-  title: string
-  artist: ArtistData
-  rankNum?: number
 }
 
 interface ArtistData {
