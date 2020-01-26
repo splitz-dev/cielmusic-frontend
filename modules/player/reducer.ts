@@ -1,6 +1,6 @@
 import { createReducer } from 'typesafe-actions'
 
-import { ChangeLoadState, ChangeState } from './actions'
+import { ChangeLoadState, ChangeState, setYoutube } from './actions'
 import { PlayerAction, PlayerState } from './types'
 
 const initState: PlayerState = {
@@ -16,4 +16,10 @@ export const player = createReducer<PlayerState, PlayerAction>(initState)
     loaded: state.loaded,
     state: action.payload.state,
   }))
+  .handleAction(setYoutube, (state, action) => ({
+    loaded: state.loaded,
+    youtube: action.payload.youtube,
+    state: state.state,
+  }))
+
 export default player

@@ -5,6 +5,7 @@ export type PlayerAction = ActionType<typeof actions>
 export type PlayerState = {
   loaded: boolean
   state: number
+  youtube?: any
   songInfo?: {
     title?: string
     artist?: string
