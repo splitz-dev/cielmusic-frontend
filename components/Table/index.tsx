@@ -121,6 +121,7 @@ const Table: React.FC<TableProps> = props => {
             name={item.name}
             album={item.album}
             artist={item.artist}
+            file={item.file}
           />
         )
       })
@@ -155,7 +156,10 @@ interface TableProps {
 Table.defaultProps = {
   isRanking: false,
 }
-
+interface ArtistData {
+  id: number
+  name: string
+}
 export interface RowData {
   key?: number
   id: string

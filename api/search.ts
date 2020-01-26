@@ -21,9 +21,9 @@ export interface Music {
   name: string
   order?: number
   type?: string
-  isTitle?: true
+  isTitle?: boolean
   album: Album
-  file?: {
+  file: {
     updatedAt: string
     createdAt: string
     id: number
@@ -38,7 +38,7 @@ export interface Artist {
   id: number
   name: string
   photo: string
-  userId: number
+  userId?: number
 }
 export interface Album {
   updatedAt: string
@@ -46,5 +46,5 @@ export interface Album {
   id: number
   name: string
   photo: string
-  artist: Artist
+  artist?: Artist
 }
