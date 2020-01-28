@@ -20,6 +20,7 @@ const sessConfig: session.SessionOptions = {
     secure: false, // To Do: 실서비스시, true 변경.
   },
   secret: process.env.SESSION_SECRET || 'ab##MUZi<sh/nGNm}ZHY-g~$&?(,Z8',
+  name: 'cielmusic.sess',
 }
 
 app.prepare().then(() => {
