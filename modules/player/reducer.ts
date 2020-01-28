@@ -6,6 +6,11 @@ import { PlayerAction, PlayerState } from './types'
 const initState: PlayerState = {
   loaded: false,
   state: 0,
+  songInfo: {
+    title: '',
+    artist: '',
+    thumb: '',
+  },
 }
 export const player = createReducer<PlayerState, PlayerAction>(initState)
   .handleAction(ChangeLoadState, (state, action) => ({
