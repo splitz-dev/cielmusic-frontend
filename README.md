@@ -19,3 +19,11 @@
 | 프로덕션과 상관없는 패키징 등 코드 | chore: 📦 패키지 추가, Deploy Script 등등 |
 | 리드미 추가                        | docs: 📚 리드미 수정                      |
 | 스타일 관련                        | style: 👁 .README--example 개선            |
+
+## 환경 변수
+
+| key              | 설명                          | 기본값                            |
+| ---------------- | ----------------------------- | --------------------------------- |
+| `PORT`           | 프론트 서버가 시작될 포트     | number `3000`                     |
+| `API`            | API 서버 주소.                | string `https://heewon.music.dev` |
+| `SESSION_SECRET` | Session 시크릿 키 (변경 권장) | string                            |
