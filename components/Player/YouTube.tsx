@@ -27,7 +27,11 @@ const youtubePlayer: React.FC = React.memo(props => {
         opts={{
           width: '100px',
           height: '60px',
-          playerVars: {},
+          playerVars: {
+            controls: 0,
+            fs: 0,
+            enablejsapi: 1,
+          },
         }}
         videoId="DcKa0n2LCLk"
         className="youtubePlayer"
