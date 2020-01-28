@@ -68,6 +68,8 @@ const Playbar: React.FC = () => {
   const [youtubePlayer, getYoutube] = useState()
   const [playing, changePlaying] = useState(false)
 
+  const playerStoreData = useSelector((state: RootState) => state.player)
+
   const fullPlaybar = () => {
     dispatch(LayoutChange())
   }
@@ -104,6 +106,24 @@ const Playbar: React.FC = () => {
     }
   }
 
+  const playBtn = () => {
+    if (playerStoreData.state === 1) {
+      // 재생중
+      return (
+        <svg xmlns="http://www.w3.org/2000/svg" width="60" viewBox="0 0 24 24" onClick={play}>
+          <path d="M8 19c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2s-2 .9-2 2v10c0 1.1.9 2 2 2zm6-12v10c0 1.1.9 2 2 2s2-.9 2-2V7c0-1.1-.9-2-2-2s-2 .9-2 2z" />
+        </svg>
+      )
+    } else {
+      // 재생중이 아니면
+      return (
+        <svg xmlns="http://www.w3.org/2000/svg" width="60" viewBox="0 0 24 24" onClick={play}>
+          <path d="M8 6.82v10.36c0 .79.87 1.27 1.54.84l8.14-5.18c.62-.39.62-1.29 0-1.69L9.54 5.98C8.87 5.55 8 6.03 8 6.82z" />
+        </svg>
+      )
+    }
+  }
+
   return (
     <>
       <StyledPlaybar>
@@ -120,9 +140,7 @@ const Playbar: React.FC = () => {
           <svg xmlns="http://www.w3.org/2000/svg" width="30" viewBox="0 0 24 24">
             <path d="M7 6c.55 0 1 .45 1 1v10c0 .55-.45 1-1 1s-1-.45-1-1V7c0-.55.45-1 1-1zm3.66 6.82l5.77 4.07c.66.47 1.58-.01 1.58-.82V7.93c0-.81-.91-1.28-1.58-.82l-5.77 4.07c-.57.4-.57 1.24 0 1.64z" />
           </svg>
-          <svg xmlns="http://www.w3.org/2000/svg" width="60" viewBox="0 0 24 24" onClick={play}>
-            <path d="M8 6.82v10.36c0 .79.87 1.27 1.54.84l8.14-5.18c.62-.39.62-1.29 0-1.69L9.54 5.98C8.87 5.55 8 6.03 8 6.82z" />
-          </svg>
+          {playBtn()}
           <svg xmlns="http://www.w3.org/2000/svg" width="30" viewBox="0 0 24 24">
             <path d="M7.58 16.89l5.77-4.07c.56-.4.56-1.24 0-1.63L7.58 7.11C6.91 6.65 6 7.12 6 7.93v8.14c0 .81.91 1.28 1.58.82zM16 7v10c0 .55.45 1 1 1s1-.45 1-1V7c0-.55-.45-1-1-1s-1 .45-1 1z" />
           </svg>
