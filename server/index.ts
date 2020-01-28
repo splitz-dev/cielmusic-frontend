@@ -1,8 +1,10 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-const express = require('express')
-const next = require('next')
+import express from 'express'
+import next from 'next'
 
-const port = parseInt(process.env.PORT, 10) || 3000
+// Router
+import authRouter from './auth'
+
+const port: number = Number(process.env.PORT) || 3000
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({
   dev,
@@ -11,6 +13,8 @@ const handle = app.getRequestHandler()
 
 app.prepare().then(() => {
   const server = express()
+
+  server.use('/api/v1', authRouter)
 
   server.all('*', (req, res) => {
     return handle(req, res)
