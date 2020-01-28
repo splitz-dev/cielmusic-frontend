@@ -4,6 +4,8 @@ import next from 'next'
 // Router
 import authRouter from './auth'
 
+export const API_HOST: string = process.env.API_HOST || 'https://heewon.music.dev'
+
 const port: number = Number(process.env.PORT) || 3000
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({
