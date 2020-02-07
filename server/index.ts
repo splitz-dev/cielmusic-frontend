@@ -21,6 +21,8 @@ const sessConfig: session.SessionOptions = {
   },
   secret: process.env.SESSION_SECRET || 'ab##MUZi<sh/nGNm}ZHY-g~$&?(,Z8',
   name: 'cielmusic.sess',
+  resave: true,
+  saveUninitialized: true,
 }
 
 app.prepare().then(() => {
