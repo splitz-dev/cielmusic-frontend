@@ -30,7 +30,7 @@ app.prepare().then(() => {
   // Routers
   server.use('/api/v1', authRouter)
 
-  server.all('*', (req, res) => {
+  server.all('*', (req: express.Request, res: express.Response) => {
     return handle(req, res)
   })
 
