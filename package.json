@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "cross-env NODE_ENV=development node ./server",
+    "dev": "cross-env NODE_ENV=development ts-node --project tsconfig.server.json ./server",
     "build": "next build",
-    "start": "cross-env NODE_ENV=production node ./server",
+    "start": "cross-env NODE_ENV=production ts-node --project tsconfig.server.json ./server",
     "lint": "eslint .",
     "storybook": "start-storybook -p 6006 -c .storybook"
   },
